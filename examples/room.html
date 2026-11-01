@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room Scene</title>
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.6.0/dist/aframe.min.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #120d1f;
+        color: #edf4ff;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .ui {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: rgba(18, 13, 31, 0.7);
+        border: 1px solid rgba(125, 211, 252, 0.35);
+      }
+      .ui h1 {
+        margin: 0 0 4px;
+        font-size: 1.1rem;
+      }
+      .ui p {
+        margin: 0 0 8px;
+        font-size: 0.9rem;
+        color: #dfeaff;
+      }
+      .ui a {
+        color: #7dd3fc;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .ui a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ui">
+      <h1>Room Scene</h1>
+      <p>A tiny room with a desk, boxes, and a portal-style center object.</p>
+      <a href="../index.html">Back to demos</a>
+    </div>
+
+    <a-scene embedded vr-mode-ui="enabled: true" device-orientation-permission-ui="enabled: true">
+      <a-sky color="#c2d9ff"></a-sky>
+      <a-light type="ambient" color="#ffffff" intensity="0.8"></a-light>
+      <a-light type="point" position="0 4 0" intensity="1.5" color="#f0abfc"></a-light>
+
+      <a-plane position="0 0 0" rotation="-90 0 0" width="25" height="25" color="#dfe8ed"></a-plane>
+
+      <a-box position="0 1.2 -4.5" width="7" height="2.4" depth="0.25" color="#8b5cf6" opacity="0.9"></a-box>
+      <a-box position="0 0.5 -4.5" width="5" height="1" depth="1.8" color="#fbbf24"></a-box>
+
+      <a-box position="-2.5 0.6 -1.8" width="1.2" height="1.2" depth="1.2" color="#22c55e"></a-box>
+      <a-box position="2.4 0.8 -2.1" width="1.5" height="1.5" depth="1.5" color="#f97316"></a-box>
+      <a-box position="-1.9 0.25 -3.5" width="0.8" height="0.5" depth="0.8" color="#38bdf8"></a-box>
+      <a-box position="1.7 0.25 -3.3" width="0.8" height="0.5" depth="0.8" color="#38bdf8"></a-box>
+
+      <a-torus
+        position="0 1.6 -0.8"
+        radius="1.2"
+        radius-tubular="0.17"
+        color="#7dd3fc"
+        opacity="0.9"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear"
+      ></a-torus>
+      <a-cylinder
+        position="0 1.6 -0.8"
+        radius="0.9"
+        height="0.2"
+        color="#c084fc"
+        opacity="0.75"
+        animation="property: rotation; to: 360 0 0; loop: true; dur: 6000; easing: linear"
+      ></a-cylinder>
+
+      <a-sphere position="0 2.2 -0.8" radius="0.5" color="#34d399"></a-sphere>
+      <a-sphere position="-2 1.8 -0.8" radius="0.35" color="#f472b6"></a-sphere>
+      <a-sphere position="2 1.8 -0.8" radius="0.35" color="#fbbf24"></a-sphere>
+
+      <a-camera position="0 1.6 4" look-controls wasd-controls></a-camera>
+    </a-scene>
+  </body>
+</html>
