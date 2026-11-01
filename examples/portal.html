@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Walk</title>
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.6.0/dist/aframe.min.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #150d28;
+        color: #edf4ff;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .ui {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: rgba(14, 8, 26, 0.7);
+        border: 1px solid rgba(125, 211, 252, 0.35);
+      }
+      .ui h1 {
+        margin: 0 0 4px;
+        font-size: 1.1rem;
+      }
+      .ui p {
+        margin: 0 0 8px;
+        font-size: 0.9rem;
+        color: #dfeaff;
+      }
+      .ui a {
+        color: #7dd3fc;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .ui a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ui">
+      <h1>Portal Walk</h1>
+      <p>Step through a glowing portal ring in a dark fantasy scene.</p>
+      <a href="../index.html">Back to demos</a>
+    </div>
+
+    <a-scene embedded vr-mode-ui="enabled: true" device-orientation-permission-ui="enabled: true">
+      <a-sky color="#120d1f"></a-sky>
+      <a-light type="ambient" color="#ffffff" intensity="0.7"></a-light>
+      <a-light type="point" position="0 4 -2" intensity="2" color="#c084fc"></a-light>
+
+      <a-plane position="0 0 0" rotation="-90 0 0" width="30" height="30" color="#20142d"></a-plane>
+
+      <a-torus
+        position="0 2 -5"
+        radius="1.4"
+        radius-tubular="0.18"
+        color="#7dd3fc"
+        opacity="0.95"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear"
+      ></a-torus>
+
+      <a-cylinder
+        position="0 2 -5"
+        radius="1.1"
+        height="0.2"
+        color="#e879f9"
+        opacity="0.8"
+        animation="property: rotation; to: 360 0 0; loop: true; dur: 8000; easing: linear"
+      ></a-cylinder>
+
+      <a-box position="0 0.25 -8" width="5" height="0.5" depth="1.5" color="#2dd4bf" opacity="0.75"></a-box>
+      <a-box position="-3 0.25 -2" width="1.5" height="0.5" depth="1.5" color="#a78bfa" opacity="0.75"></a-box>
+      <a-box position="3 0.25 -2" width="1.5" height="0.5" depth="1.5" color="#a78bfa" opacity="0.75"></a-box>
+
+      <a-sphere position="-2 1.6 -7" radius="0.6" color="#fbbf24"></a-sphere>
+      <a-sphere position="2 1.7 -9" radius="0.5" color="#f472b6"></a-sphere>
+      <a-sphere position="0 2.4 -10" radius="0.5" color="#5eead4"></a-sphere>
+
+      <a-camera position="0 1.6 4" look-controls wasd-controls></a-camera>
+    </a-scene>
+  </body>
+</html>
